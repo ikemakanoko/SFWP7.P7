@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>ユーザー登録</h1>
+<th:block th:object="${user}">
+	<p th:errors="*{name}"></p>
+	<p th:errors="*{loginId}"></p>
+	<p th:errors="*{pass}"></p>
+</th:block>
+<form action="" method="post" th:object="${user}">
+	<p>氏名: <input type="text" th:field="*{name}"></p>
+	<p>ログインID: <input type="text"  th:field="*{loginId}"></p>
+	<p>パスワード:<input type="text"  th:field="*{pass}"></p>
+	<p>パスワード(確認用):<input type="text" th:field="*{passConf}"></p>
+	<p><input type="submit"></p>
+</form>
+</body>
+</html>
